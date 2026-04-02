@@ -5,17 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badger Watch</title>
     <style>
-        body { font-family: sans-serif; margin: 20px; background-color: #f0f0f0; color: #333; }
-        h1 { color: #556B2F; }
-        .video-container {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        body {
+            font-family: 'Georgia', serif; /* A bit more classic feel */
+            margin: 0;
+            padding: 20px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e8e8e8 10px,
+                #e8e8e8 20px
+            ); /* Subtle badger stripe pattern */
+            color: #333;
         }
-        .video-container h2 { color: #8B4513; }
+        h1 {
+            color: #1a1a1a; /* Dark almost black */
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: #555;
+        }
+        .video-container {
+            background-color: #ffffff;
+            border: 2px solid #a0a0a0; /* Medium grey border */
+            padding: 20px;
+            margin: 0 auto 30px auto; /* Centered with more space */
+            max-width: 800px; /* Constrain width */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Stronger shadow */
+            transition: transform 0.2s ease-in-out;
+        }
+        .video-container:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+        .video-container h2 {
+            color: #333; /* Darker title */
+            font-size: 1.8em;
+            margin-top: 0;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
         .video-embed {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -23,7 +59,8 @@
             overflow: hidden;
             max-width: 100%;
             background: #000;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px; /* Rounded corners for video embed */
         }
         .video-embed iframe {
             position: absolute;
@@ -36,8 +73,8 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to Badger Watch!</h1>
-    <p>Check out the latest badger videos below:</p>
+    <h1><span style="font-size: 1.2em;">🦡</span> Welcome to Badger Watch! <span style="font-size: 1.2em;">🦡</span></h1>
+    <p>Witness the nocturnal life and charming antics of badgers right here!</p>
 
     {% for video in videos %}
     <div class="video-container">
