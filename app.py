@@ -6,10 +6,10 @@ app = Flask(__name__)
 # List of direct video URLs (e.g., from Cloudinary CDN direct links, or any other hosting)
 # In a real application, this would typically come from a database.
 videos_urls = [
-    "https://res.cloudinary.com/your_cloud_name/video/upload/v1678901234/badger_foraging_example_video.mp4", # REPLACE with your actual direct .mp4 video URL
-    "https://res.cloudinary.com/your_cloud_name/video/upload/v1678901235/badger_family_example_video.mp4", # REPLACE with another actual direct .mp4 video URL
-    "https://res.cloudinary.com/your_cloud_name/video/upload/v1678901236/another_badger_video.mp4",     # Add more .mp4 URLs as needed
-    "https://res.cloudinary.com/your_cloud_name/video/upload/v1678901237/cute_badger_moment.mp4"
+ "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246414/vauq4o_xhtmy9.mp4",
+    "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246413/izjoty_tkg9xn.mp4",
+    "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246410/j6wxck_g9ps3t.mp4",
+    "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246409/9uenlv_ntdjg5.mp4"
 ]
 
 @app.route('/')
