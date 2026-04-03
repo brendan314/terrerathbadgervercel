@@ -7,10 +7,14 @@ app = Flask(__name__)
 # You will need to manually provide the 'datetime' for each video.
 # In a real application, this would typically come from a database.
 videos_data = [
-    {"url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246414/vauq4o_xhtmy9.mp4", "datetime": "YYYY-MM-DD HH:MM"}, # Update this datetime
-    {"url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246413/izjoty_tkg9xn.mp4", "datetime": "YYYY-MM-DD HH:MM"}, # Update this datetime
-    {"url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246410/j6wxck_g9ps3t.mp4", "datetime": "YYYY-MM-DD HH:MM"}, # Update this datetime
-    {"url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246409/9uenlv_ntdjg5.mp4", "datetime": "YYYY-MM-DD HH:MM"}  # Update this datetime
+    {"url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246414/vauq4o_xhtmy9.mp4",
+     "datetime": "2026-03-30 00:30"},  # Update this datetime
+    {"url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246413/izjoty_tkg9xn.mp4",
+     "datetime": "2026-03-25 02:22"},  # Update this datetime
+    {"url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246410/j6wxck_g9ps3t.mp4",
+     "datetime": "2026-03-29 01:57"},  # Update this datetime
+    {"url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246409/9uenlv_ntdjg5.mp4",
+     "datetime": "2026-03-23 22:01"}  # Update this datetime
 ]
 
 @app.route('/')
