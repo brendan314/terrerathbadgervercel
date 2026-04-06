@@ -53,3 +53,7 @@ def index():
 
     return render_template('index.html', sorted_groups=sorted_groups)
 
+# This block is for local development only and should not be deployed to Vercel
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
