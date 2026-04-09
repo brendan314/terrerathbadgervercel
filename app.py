@@ -73,6 +73,18 @@ media_items = [
         "poster": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775767260/IMAG0084_bld7wb.jpg",
         "url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775767260/IMAG0084_bld7wb.mp4",
         "caption": "Rabbit eating"
+    },
+    {
+        "type": "video",
+        "poster": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775772059/IMAG0024_xvrk0v.jpg",
+        "url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775772059/IMAG0024_xvrk0v.mp4",
+        "caption": "Badger walking"
+    },
+    {
+        "type": "video",
+        "poster": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775772440/IMAG0096_frcjjb.jpg",
+        "url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775772440/IMAG0096_frcjjb.mp4",
+        "caption": "Pheasant"
     }
 ]
 
