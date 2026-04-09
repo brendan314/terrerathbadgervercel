@@ -56,6 +56,11 @@ media_items = [
         "poster": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775772440/IMAG0096_frcjjb.jpg",
         "url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775772440/IMAG0096_frcjjb.mp4",
         "caption": "Pheasant"
+    },
+    {
+        "type": "image",
+        "url": "https://res.cloudinary.com/dkheyxxzk/image/upload/v1775774624/IMAG0011_c2mpai.jpg",
+        "caption": "Pheasant still"
     }
 ]
 
