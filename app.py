@@ -51,6 +51,21 @@ media_items = [
         "type": "video",
         "url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775246409/9uenlv_ntdjg5.mp4",
         "caption": "Again a Badger"
+    },
+    {
+        "type": "video",
+        "url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775768315/IMAG0036_ltgh93.mp4",
+        "caption": "Rabbit hopping"
+    },
+    {
+        "type": "video",
+        "url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775768309/IMAG0039_jnpexy.mp4",
+        "caption": "Rabbit speed"
+    },
+    {
+        "type": "video",
+        "url": "https://res.cloudinary.com/dkheyxxzk/video/upload/v1775767260/IMAG0084_bld7wb.mp4",
+        "caption": "Rabbit eating"
     }
 ]
 
