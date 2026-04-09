@@ -5,59 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terrerath Watch</title>
     <style>
-        body { background: #0a0a0a; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        body { background: #0a0a0a; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; color: white; }
+        h1 { color: #4ade80; font-family: sans-serif; font-weight: 200; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; font-size: 1.1rem; }
 
-        h1 {
-            color: #4ade80;
-            font-family: sans-serif;
-            font-weight: 200;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
+        /* Grid Setup */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; width: 100%; max-width: 1400px; }
+        .item { display: flex; flex-direction: column; }
 
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+        /* Forces images and videos to be the same 16:9 shape */
+        video, .thumb {
             width: 100%;
-            max-width: 1400px;
-        }
-
-        .video-item { display: flex; flex-direction: column; }
-
-        video {
-            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
             border-radius: 4px;
             background: #000;
-            display: block;
+            cursor: pointer;
         }
 
-        .caption {
-            margin-top: 8px;
-            font-family: sans-serif;
-            font-size: 0.75rem;
-            color: #666; /* Subtle grey so it doesn't distract */
-            text-align: left;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .caption { margin-top: 8px; font-family: sans-serif; font-size: 0.75rem; color: #666; letter-spacing: 1px; text-transform: uppercase; }
+
+        /* FULLSCREEN IMAGE MODAL */
+        #modal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center;
         }
+        #modal img { max-width: 90%; max-height: 90%; border-radius: 4px; }
+        #modal:target { display: flex; } /* Show when URL ends in #modal */
+        .close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; text-decoration: none; font-family: sans-serif; }
     </style>
 </head>
 <body>
 
     <h1>Terrerath Watch</h1>
 
-    <div class="video-grid">
-        {% for video in videos %}
-        <div class="video-item">
-            <video controls preload="none" loading="lazy">
-                <source src="{{ video.url }}" type="video/mp4">
-            </video>
-            <div class="caption">{{ video.caption }}</div>
+    <div class="grid">
+        {% for m in media %}
+        <div class="item">
+            {% if m.type == 'video' %}
+                <video controls preload="none" loading="lazy">
+                    <source src="{{ m.url }}" type="video/mp4">
+                </video>
+            {% else %}
+                <a href="#modal" onclick="document.getElementById('fullImg').src='{{ m.url }}'">
+                    <img src="{{ m.url }}" class="thumb" loading="lazy">
+                </a>
+            {% endif %}
+            <div class="caption">{{ m.caption }}</div>
         </div>
         {% endfor %}
+    </div>
+
+    <div id="modal">
+        <a href="#" class="close">&times;</a>
+        <img id="fullImg" src="">
     </div>
 
 </body>
