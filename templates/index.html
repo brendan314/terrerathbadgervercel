@@ -5,15 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terrerath Watch</title>
     <style>
-        /* Dark, cinematic background */
-        body {
-            background: #0a0a0a;
-            margin: 0;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        body { background: #0a0a0a; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
 
         h1 {
             color: #4ade80;
@@ -21,30 +13,35 @@
             font-weight: 200;
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin: 20px 0;
-            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
         }
 
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 10px;
+            gap: 20px;
             width: 100%;
             max-width: 1400px;
         }
+
+        .video-item { display: flex; flex-direction: column; }
 
         video {
             width: 100%;
             border-radius: 4px;
             background: #000;
             display: block;
-            transition: transform 0.3s ease;
         }
 
-        /* Subtle zoom effect when you hover */
-        video:hover {
-            transform: scale(1.02);
-            z-index: 10;
+        .caption {
+            margin-top: 8px;
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            color: #666; /* Subtle grey so it doesn't distract */
+            text-align: left;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -53,13 +50,13 @@
     <h1>Terrerath Watch</h1>
 
     <div class="video-grid">
-        {% for url in video_urls %}
-            <video
-                controls
-                preload="none"
-                loading="lazy">
-                <source src="{{ url }}" type="video/mp4">
+        {% for video in videos %}
+        <div class="video-item">
+            <video controls preload="none" loading="lazy">
+                <source src="{{ video.url }}" type="video/mp4">
             </video>
+            <div class="caption">{{ video.caption }}</div>
+        </div>
         {% endfor %}
     </div>
 
