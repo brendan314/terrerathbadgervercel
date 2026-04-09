@@ -38,22 +38,36 @@
 
     <h1>Terrerath Watch</h1>
 
-    <div class="grid">
-        {% for m in media %}
-        <div class="item">
-            {% if m.type == 'video' %}
-                <video controls preload="none" loading="lazy">
-                    <source src="{{ m.url }}" type="video/mp4">
-                </video>
-            {% else %}
-                <a href="#modal" onclick="document.getElementById('fullImg').src='{{ m.url }}'">
-                    <img src="{{ m.url }}" class="thumb" loading="lazy">
-                </a>
-            {% endif %}
-            <div class="caption">{{ m.caption }}</div>
-        </div>
-        {% endfor %}
+<div class="grid">
+    {% for m in media %}
+    <div class="item">
+        {% if m.type == 'embed' %}
+            <iframe
+                src="{{ m.url }}"
+                class="thumb"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowfullscreen
+                frameborder="0">
+            </iframe>
+
+        {% elif m.type == 'video' %}
+            <video
+            controls
+            preload="none"
+            poster="{{ m.poster }}"
+            loading="lazy">
+            <source src="{{ m.url }}" type="video/mp4">
+        </video>
+
+        {% else %}
+            <a href="#modal" onclick="document.getElementById('fullImg').src='{{ m.url }}'">
+                <img src="{{ m.url }}" class="thumb" loading="lazy">
+            </a>
+        {% endif %}
+        <div class="caption">{{ m.caption }}</div>
     </div>
+    {% endfor %}
+</div>
 
     <div id="modal">
         <a href="#" class="close">&times;</a>
